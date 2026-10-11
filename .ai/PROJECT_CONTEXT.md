@@ -1,6 +1,6 @@
 ---
 doc_id: ai-project-context
-version: 1.0.0
+version: 1.1.0
 canonical_path: .ai/PROJECT_CONTEXT.md
 updated: 2026-10-12
 ---
@@ -46,9 +46,16 @@ owner_ledger: docs/OWNER_ACTIONS.md
 
 ## Current development slice
 
-- 빈 GitHub 저장소를 초기화하고 제품 요구사항과 개발 규칙 참조를 연결합니다.
+- 추가 믹서 시안과 프로젝트 커뮤니케이션 규칙을 정리합니다. 시안의 기준 자료는 `docs/design/`에서 관리합니다.
 - 다음 구현 검토 대상은 다른 앱과의 동시 재생을 확인하는 오디오 실험입니다. 실제 UI 구현 전 필요한 디자인 선택은 `docs/OWNER_ACTIONS.md`의 `DESIGN-001`을 참조합니다.
 - 이번 작업에서 앱 구현, 자동 개발 루프, 스토어 제출이나 배포를 시작하지 않습니다.
+
+## Communication rules
+
+- 진행·완료 보고는 한국어 요약 보고체로 작성합니다. 핵심 결과, 결정, 미해결 사항을 먼저 짧게 제시합니다.
+- 다음 해야 할 사항은 `다음 할 사항` 표로 제시합니다. 첫 번째 열은 `번호`이며, 실행 순서에 따라 1부터 연속 번호를 부여합니다.
+- 표의 기본 열은 `번호`, `다음 할 사항`입니다. 필요한 경우에만 상태, 담당 또는 완료 기준을 추가합니다.
+- 완료한 작업과 후속 작업을 구분합니다. 사용자 선택이 필요한 항목과 아직 실행하지 않은 항목은 각각 그 상태를 명시합니다.
 
 ## Permanently excluded scope
 
