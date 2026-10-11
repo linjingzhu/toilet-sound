@@ -1,0 +1,44 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.p8
+*.jks
+*.keystore
+*.mobileprovision
+key.properties
+local.properties
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Generated output
+build/
+coverage/
+*.log
+
+# Dart / Flutter, if selected for implementation
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+android/.gradle/
+android/captures/
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+**/xcuserdata/
+**/DerivedData/
+
+# Keep application dependency lockfiles under version control.

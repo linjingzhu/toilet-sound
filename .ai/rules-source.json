@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "mode": "reference",
+  "repository": "linjingzhu/ai-dev-rule",
+  "repository_url": "https://github.com/linjingzhu/ai-dev-rule",
+  "visibility": "private",
+  "ref": "stable",
+  "commit": "7e9013d4594a94486152d8a74a5b9252bfcd4297",
+  "set_version": "4.1.0",
+  "verified_on": "2026-10-12",
+  "verification_timezone": "Asia/Seoul",
+  "entrypoints": {
+    "codex": "AGENTS.md",
+    "claude_code": "CLAUDE.md"
+  }
+}
