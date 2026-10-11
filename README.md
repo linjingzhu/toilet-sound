@@ -11,7 +11,7 @@
 - 서비스 대상: Android / Google Play, iOS / App Store
 - 수익 모델: 광고형
 - 가칭: VEIL / 베일 — 최종 명칭 미확정
-- 디자인: 메인 믹서 시안 3종 작성, 최종 시안 미선택
+- 디자인: [추가 믹서 시안 3종](docs/design/2026-10-12-additional-concepts.md). 기준 디자인 결정은 `DESIGN-001`에서 관리합니다.
 - 기술 검토 방향: Flutter 및 AdMob. 실제 오디오 검증을 거쳐 구현 구성을 결정합니다.
 
 ## 핵심 요구사항
@@ -30,11 +30,13 @@
 | 문서 | 내용 |
 | --- | --- |
 | [제품 요구사항](docs/product-requirements.md) | 확정 요구, 제안 범위, 화면·재생 동작 |
+| [추가 믹서 시안](docs/design/2026-10-12-additional-concepts.md) | 채팅 표시 순서와 대응하는 디자인 이미지 3종 |
 | [다른 앱과의 동시 재생](docs/audio-coexistence.md) | iOS·Android 구현 후보, 한계, 실기기 검증 기준 |
 | [프로젝트 컨텍스트](.ai/PROJECT_CONTEXT.md) | 개발 범위, 프로젝트별 제약, 검증 명령 |
 | [개발 규칙 참조](.ai/rules-source.json) | ai-dev-rule 출처와 고정 기준 커밋 |
 | [사용자 결정 항목](docs/OWNER_ACTIONS.md) | 다음 단계에서 필요한 제품 선택 |
 | [초기화 검증 기록](.ai/reports/2026-10-12-repository-bootstrap.md) | 이번 초기 구성의 검토 범위와 미검증 항목 |
+| [시안·보고 규칙 검증 기록](.ai/reports/2026-10-12-design-communication.md) | 추가 시안과 커뮤니케이션 규칙 반영 내역 |
 
 ## 개발 규칙
 
