@@ -32,7 +32,7 @@ owner_ledger: docs/OWNER_ACTIONS.md
 
 Flutter SDK가 PATH에 있는 환경에서 정적 분석과 단위·위젯 테스트를 실행합니다. 위젯 런타임 게이트는 390×844 논리 화면에서 핵심 흐름과 레이아웃 예외를 확인합니다. Android·iOS 빌드 및 실기기 실행 게이트는 아직 정의되지 않았습니다.
 
-`app/` Capacitor 구현의 검사는 `cd app && npm run check:runtime && npm test && npm run build && npm run build:native && npm run test:sites`입니다. 위 블록은 `ARCH-001` 결정 전까지 Flutter 기준으로 둡니다.
+`app/` Capacitor 구현의 검사는 `cd app && npm run check:runtime && npm test && npm run build && npm run build:native && npm run test:sites`입니다. Android 네이티브 게이트는 `cd app && npx cap sync android && cd android && ./gradlew assembleDebug lintDebug`입니다(Android SDK 36·JDK 21 필요). 위 블록은 `ARCH-001` 결정 전까지 Flutter 기준으로 둡니다.
 
 ## Authoritative product constraints
 

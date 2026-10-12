@@ -268,8 +268,11 @@ final class VeilAudioEngine {
             }
             return true;
         });
-        track.routingListener = routing -> routeChanged(track);
-        player.addOnRoutingChangedListener(track.routingListener, main);
+        // MediaPlayer implements AudioRouting only from API 28; older devices rely on the noisy/device callbacks.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            track.routingListener = routing -> routeChanged(track);
+            player.addOnRoutingChangedListener(track.routingListener, main);
+        }
         player.prepareAsync();
     }
 
@@ -419,7 +422,9 @@ final class VeilAudioEngine {
         track.started = false;
         track.player.setOnPreparedListener(null);
         track.player.setOnErrorListener(null);
-        if (track.routingListener != null) track.player.removeOnRoutingChangedListener(track.routingListener);
+        if (track.routingListener != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            track.player.removeOnRoutingChangedListener(track.routingListener);
+        }
         track.player.release();
     }
 
@@ -438,6 +443,7 @@ final class VeilAudioEngine {
     }
 
     private void routeChanged(Track track) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return;
         if (track.released || tracks.get(track.id) != track || !track.started) return;
         AudioDeviceInfo device = track.player.getRoutedDevice();
         if (device == null) return;
@@ -449,6 +455,7 @@ final class VeilAudioEngine {
     }
 
     private void updateOutput() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return;
         for (Track track : tracks.values()) {
             if (!track.started || track.released) continue;
             AudioDeviceInfo device = track.player.getRoutedDevice();
