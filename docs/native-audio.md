@@ -126,7 +126,7 @@ Capacitor 8의 기본 iOS 프로젝트는 Swift Package Manager를 사용한다.
 
 ## 검증 범위와 다음 할 사항
 
-현재 확인한 항목은 패키지 JavaScript 문법, Android manifest·resource XML 파싱, Java 4개 파일의 **문법 파싱 단계**, 설치된 CLI의 양쪽 플랫폼 플러그인 발견과 SPM 제품 이름이다. Java 문법 파싱은 Android 타입 검사나 Gradle 빌드가 아니다. Swift 컴파일, Android 앱 빌드, 백그라운드 동작, 실제 오디오 품질과 다른 앱 동시 재생은 **NOT RUN**이다.
+2026-10-12에 Android SDK 36·JDK 21 환경에서 `app/android`의 `./gradlew assembleDebug lintDebug`가 통과했다(디버그 APK 생성, lint 오류 0). lint가 찾은 API 28 전용 경로 감지 호출 4곳은 버전 조건으로 감쌌다. API 24~27에서는 출력 경로 변경을 이어폰 분리·장치 제거 감시로만 감지한다. Swift 컴파일, 실제 기기 실행, 백그라운드 동작, 실제 오디오 품질과 다른 앱 동시 재생은 **NOT RUN**이다. 기록: `.ai/reports/2026-10-12-native-build-environment.md`.
 
 | 번호 | 다음 할 사항 | 완료 기준 |
 | --- | --- | --- |
