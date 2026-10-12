@@ -1,6 +1,6 @@
 ---
 doc_id: ai-project-context
-version: 1.1.0
+version: 1.2.0
 canonical_path: .ai/PROJECT_CONTEXT.md
 updated: 2026-10-12
 ---
@@ -20,17 +20,17 @@ repository_mode: personal
 ```text
 base_branch: main
 merge_deploys: no
-runtime_gate: none
-test_command: none
-lint_command: git diff --check
+runtime_gate: flutter test test/mixer_screen_test.dart
+test_command: flutter test
+lint_command: flutter analyze && git diff --check
 build_command: none
-generated: none
+generated: assets/audio/*.wav <- dart run tool/generate_audio_assets.dart
 external_scripts: none
 public_ids: none
 owner_ledger: docs/OWNER_ACTIONS.md
 ```
 
-현재는 문서만 있는 저장소입니다. 앱 테스트·빌드·실기기 실행 명령은 아직 없습니다.
+Flutter SDK가 PATH에 있는 환경에서 정적 분석과 단위·위젯 테스트를 실행합니다. 위젯 런타임 게이트는 390×844 논리 화면에서 핵심 흐름과 레이아웃 예외를 확인합니다. Android·iOS 빌드 및 실기기 실행 게이트는 아직 정의되지 않았습니다.
 
 ## Authoritative product constraints
 
@@ -40,15 +40,18 @@ owner_ledger: docs/OWNER_ACTIONS.md
 
 ## Current architecture
 
-- 현재는 기획 문서만 있으며 실행 가능한 앱은 없습니다. Flutter와 AdMob은 검토 방향입니다.
+- Flutter 기반 Android·iOS 앱 스캐폴드와 첫 믹서 MVP가 있습니다. `just_audio` 다중 플레이어, `audio_session`, `shared_preferences`를 사용합니다.
+- iOS는 `.playback + .mixWithOthers` 세션 후보와 오디오 백그라운드 모드를 구성합니다. Android에서는 플레이어의 자동 세션 활성화를 끄고 앱이 오디오 포커스를 요청하지 않는 후보 구조를 구현했습니다. 둘 다 실기기 검증 전입니다.
+- `assets/audio/*.wav`는 `tool/generate_audio_assets.dart`가 만드는 기술 검증용 샘플입니다. 출시용 음원 및 권리 확인을 대신하지 않습니다.
+- 광고는 화면 내 비활성 자리 표시자만 있으며 AdMob SDK는 아직 연결하지 않았습니다.
 - 공통 규칙은 `.ai/rules-source.json`에 고정된 커밋을 외부 참조합니다. 정책 원문·도구·에이전트를 복제한 전체 도입 상태가 아닙니다.
 - 프로젝트별 요구는 이 문서와 `docs/`, 실행 기록은 `.ai/reports/`에서 관리합니다. 임시 스크린샷과 로그 등 작업 산출물은 저장소 밖에 둡니다.
 
 ## Current development slice
 
-- 추가 믹서 시안과 프로젝트 커뮤니케이션 규칙을 정리합니다. 시안의 기준 자료는 `docs/design/`에서 관리합니다.
-- 다음 구현 검토 대상은 다른 앱과의 동시 재생을 확인하는 오디오 실험입니다. 실제 UI 구현 전 필요한 디자인 선택은 `docs/OWNER_ACTIONS.md`의 `DESIGN-001`을 참조합니다.
-- 이번 작업에서 앱 구현, 자동 개발 루프, 스토어 제출이나 배포를 시작하지 않습니다.
+- 시안 1 `Pure Ease`를 되돌릴 수 있는 구현 기준으로 사용한 첫 Flutter MVP를 정적 분석·테스트합니다. 최종 디자인 선택은 여전히 `docs/OWNER_ACTIONS.md`의 `DESIGN-001`입니다.
+- 다음 검증 대상은 Android·iPhone 실기기에서의 혼합, 다른 앱과의 동시 재생, 백그라운드 유지입니다.
+- AdMob 연결, 출시용 음원 선정, 스토어 제출·배포는 아직 시작하지 않습니다.
 
 ## Communication rules
 

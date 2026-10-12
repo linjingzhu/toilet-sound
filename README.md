@@ -6,13 +6,27 @@
 
 ## 현재 상태
 
-**기획 및 개발 준비 단계입니다.** 이 저장소에는 초기 제품 요구사항과 개발 지침이 들어 있습니다. 실행 가능한 앱, 광고 연동, 음원 파일, 실기기 검증 결과는 아직 없습니다.
+**첫 Flutter MVP 구현 단계입니다.** Android·iOS 앱 스캐폴드, 믹서 화면, 다중 트랙 재생 계층, 설정 저장, 기술 검증용 생성 음원과 테스트가 들어 있습니다. 광고 연동과 실기기 동시 재생 검증은 아직 없습니다.
 
 - 서비스 대상: Android / Google Play, iOS / App Store
 - 수익 모델: 광고형
 - 가칭: VEIL / 베일 — 최종 명칭 미확정
 - 디자인: [추가 믹서 시안 3종](docs/design/2026-10-12-additional-concepts.md). 기준 디자인 결정은 `DESIGN-001`에서 관리합니다.
-- 기술 검토 방향: Flutter 및 AdMob. 실제 오디오 검증을 거쳐 구현 구성을 결정합니다.
+- 기술 구성: Flutter, `just_audio`, `audio_session`, `shared_preferences`. AdMob은 화면 자리만 잡았고 SDK는 미연결입니다.
+
+## 실행과 검증
+
+Flutter SDK가 설치된 환경에서 실행합니다.
+
+```bash
+flutter pub get
+dart run tool/generate_audio_assets.dart
+flutter analyze
+flutter test
+flutter run
+```
+
+`assets/audio/*.wav`는 기술 실험용 생성 샘플입니다. 출시용 음원 품질이나 사용 권리를 의미하지 않습니다. Android·iPhone 실기기에서 다른 앱과의 동시 재생을 확인하기 전에는 해당 기능을 검증 완료로 표시하지 않습니다.
 
 ## 핵심 요구사항
 
@@ -37,6 +51,7 @@
 | [사용자 결정 항목](docs/OWNER_ACTIONS.md) | 다음 단계에서 필요한 제품 선택 |
 | [초기화 검증 기록](.ai/reports/2026-10-12-repository-bootstrap.md) | 이번 초기 구성의 검토 범위와 미검증 항목 |
 | [시안·보고 규칙 검증 기록](.ai/reports/2026-10-12-design-communication.md) | 추가 시안과 커뮤니케이션 규칙 반영 내역 |
+| [MVP 개발 안내](docs/development.md) | 앱 구조, 오디오 정책 후보, 실행·검증 범위 |
 
 ## 개발 규칙
 
@@ -49,7 +64,7 @@
 
 Codex는 [AGENTS.md](AGENTS.md), Claude Code는 [CLAUDE.md](CLAUDE.md)를 통해 해당 도구의 원본 진입 지침을 읽습니다. 공통 규칙의 상대 경로는 규칙 저장소에서, 프로젝트별 문서는 이 저장소에서 해석합니다. 현재 연결은 `adopt.py`로 정책·도구·에이전트를 복제한 구성이 아니며 `.ai/set.lock`을 생성하지 않습니다.
 
-실행 가능한 앱이나 CI 워크플로는 아직 없습니다. 규칙 세트가 제공하는 자동 개발 절차를 이 저장소 초기화 작업에서 시작하지 않습니다.
+CI 워크플로는 아직 없습니다. 로컬 정적 분석과 테스트 명령은 위 실행 절차와 프로젝트 컨텍스트를 따릅니다.
 
 ## 개발 시작 순서
 
