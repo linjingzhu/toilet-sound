@@ -32,6 +32,8 @@ owner_ledger: docs/OWNER_ACTIONS.md
 
 Flutter SDK가 PATH에 있는 환경에서 정적 분석과 단위·위젯 테스트를 실행합니다. 위젯 런타임 게이트는 390×844 논리 화면에서 핵심 흐름과 레이아웃 예외를 확인합니다. Android·iOS 빌드 및 실기기 실행 게이트는 아직 정의되지 않았습니다.
 
+`app/` Capacitor 구현의 검사는 `cd app && npm run check:runtime && npm test && npm run build && npm run build:native && npm run test:sites`입니다. 위 블록은 `ARCH-001` 결정 전까지 Flutter 기준으로 둡니다.
+
 ## Authoritative product constraints
 
 - 최신 가칭은 커튼모드 / CURTAIN MODE이며 최종 제품명은 미확정입니다. 기존 VEIL은 내부 패키지·플러그인 이름에 남아 있습니다. 개발 저장소명은 `toilet-sound`이며 Android와 iOS를 모두 대상으로 합니다.
