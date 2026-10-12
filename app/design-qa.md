@@ -87,3 +87,7 @@
 브랜드 확정 후 가칭 워드마크와 기본 네이티브 앱 아이콘을 정리한다. 현재 승인된 스타일 구현을 막는 P3 조정은 없다.
 
 final result: passed
+
+## 사용자 요청 추가 캡처 — 10:33~10:35 KST
+
+2026-10-12 10:30 사용자의 이름 제안·스크린샷 요청에 따라 [홈](../docs/design/evidence/curtain-home-20261012.jpg), [백색 소음 선택](../docs/design/evidence/curtain-library-20261012.jpg), [피아노 선택](../docs/design/evidence/curtain-piano-20261012.jpg)을 새로 촬영했다. 세 파일 모두 393 × 852px이며 같은 iframe 환경에서 CSS 393 × 852px, DPR 1, scrollTop 0을 확인했다. 소스·레이아웃·표시명 변경은 없고 사진 생성이나 이미지 보정을 하지 않았다. 이 추가 캡처는 실기기 오디오 검증으로 간주하지 않는다. 이름은 [추가 제안 문서](../docs/design/name-proposals.md)에 기록했다.
