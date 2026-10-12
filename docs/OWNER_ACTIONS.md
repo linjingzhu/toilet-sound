@@ -5,5 +5,6 @@
 | DESIGN-001 | 2026-10-12 사용자 지시로 [추가 시안 1번](design/assets/additional-01-pure-ease.png) 선택 | 실제 UI 구현 전 | RESOLVED |
 | DESIGN-002 | 2026-10-12 후속 참고 이미지의 펄그레이·블루그레이 색감과 디자인 적용 | 이번 화면 수정 | RESOLVED |
 | BRAND-001 | 커튼 개념으로 이름 개선. 화면·앱·알림에 `커튼모드 / CURTAIN MODE`를 가칭으로 적용, 최종 이름 미확정 | 브랜드·스토어 정보 확정 전 | OPEN |
+| ARCH-001 | 앱 구현 기준 정리: 루트 Flutter MVP(PR #3, 최신)와 `app/` Capacitor 구현(PR #2) 가운데 유지할 구현 결정 | 실기기 검증 착수 전 | OPEN |
 
 현재 저장소 초기화를 위해 추가로 필요한 계정 로그인이나 외부 등록은 없습니다.
