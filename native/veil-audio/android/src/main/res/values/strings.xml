@@ -1,0 +1,6 @@
+<resources>
+    <string name="veil_audio_channel">커튼모드 소리 재생</string>
+    <string name="veil_audio_notification_title">커튼모드</string>
+    <string name="veil_audio_notification_body">선택한 소리를 재생합니다</string>
+    <string name="veil_audio_notification_stop">정지</string>
+</resources>

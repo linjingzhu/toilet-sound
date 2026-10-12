@@ -1,0 +1,37 @@
+{
+  "name": "@veil/native-audio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Capacitor audio mixer for the VEIL app",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "android/src/main/",
+    "android/build.gradle",
+    "android/consumer-rules.pro",
+    "ios/Sources/",
+    "Package.swift",
+    "VeilNativeAudio.podspec",
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@capacitor/core": ">=8.0.0 <9.0.0"
+  },
+  "capacitor": {
+    "android": { "src": "android" },
+    "ios": { "src": "ios" }
+  }
+}
